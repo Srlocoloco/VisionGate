@@ -1,0 +1,241 @@
+.filtros {
+  display: flex;
+  align-items: end;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.filtros input,
+.filtros select {
+  background: #161b22;
+}
+.ano-input {
+  width: 90px;
+}
+.legenda {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 12px 18px;
+  margin-bottom: 16px;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.legenda span {
+  font-size: 12px;
+  color: #8b949e;
+}
+.modal-label {
+  font-size: 11px;
+  color: #8b949e;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.card .v {
+  font-size: 36px;
+  font-weight: 800;
+}
+.card .l {
+  color: #8b949e;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+.freq {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.barra {
+  height: 7px;
+  min-width: 80px;
+  flex: 1;
+  background: #21262d;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.barra-fill {
+  height: 100%;
+}
+.faltas-lista {
+  display: none;
+  margin-top: 6px;
+  padding: 8px;
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 6px;
+  color: #8b949e;
+  font-size: 11px;
+  line-height: 1.8;
+}
+.btn-exp {
+  background: none;
+  border: 0;
+  color: #8b949e;
+  cursor: pointer;
+  font-size: 11px;
+}
+.nome-link {
+  font-size: 13px;
+  font-weight: 800;
+  color: #e6edf3;
+}
+.modal {
+  max-width: 860px;
+}
+.modal h2 {
+  font-size: 16px;
+}
+.modal .sub {
+  color: #8b949e;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.tri-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.tri-box {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 14px;
+  text-align: center;
+}
+.tv {
+  font-size: 26px;
+  font-weight: 800;
+}
+.tl {
+  color: #8b949e;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.tf {
+  font-size: 12px;
+  margin-top: 6px;
+}
+.evt-log {
+  max-height: 220px;
+  overflow: auto;
+}
+.evt-row {
+  display: flex;
+  gap: 10px;
+  padding: 6px 10px;
+  border-bottom: 1px solid #21262d;
+}
+.transferido td {
+  opacity: 0.6;
+}
+
+/* ═══════════════════════════════════════════════════
+   IMPRESSAO — area dedicada, controle via JS
+   ═══════════════════════════════════════════════════ */
+#area-impressao {
+  display: none;
+}
+
+@page {
+  size: A4 landscape;
+  margin: 10mm 14mm;
+}
+
+@media print {
+  /* Esconde TODA a interface */
+  body > * { display: none !important; }
+
+  /* Mostra SOMENTE a area de impressao */
+  #area-impressao {
+    display: block !important;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 9pt;
+    color: #000;
+    background: #fff;
+  }
+
+  /* Cabecalho */
+  .pi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid #000;
+    padding-bottom: 4mm;
+    margin-bottom: 4mm;
+  }
+  .pi-header h1 { font-size: 14pt; font-weight: 900; letter-spacing: 2px; margin: 0 }
+  .pi-header p  { font-size: 8pt; color: #555; margin: 2px 0 0 }
+  .pi-header .pi-meta { text-align: right; font-size: 8pt; color: #555 }
+
+  /* Resumo compacto (substitui os cards) */
+  .pi-resumo {
+    display: flex;
+    gap: 8mm;
+    margin-bottom: 4mm;
+    font-size: 8.5pt;
+  }
+  .pi-resumo span {
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    padding: 2px 8px;
+  }
+  .pi-resumo b { font-size: 10.5pt }
+
+  /* Tabela compacta */
+  .pi-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    page-break-inside: auto;
+  }
+  .pi-tabela thead { display: table-header-group }
+  .pi-tabela tr    { page-break-inside: avoid }
+  .pi-tabela th {
+    background: #e8e8e8 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color: #000;
+    font-size: 7.5pt;
+    font-weight: 700;
+    padding: 3px 5px;
+    border: 1px solid #bbb;
+    text-align: left;
+    letter-spacing: .4px;
+  }
+  .pi-tabela td {
+    font-size: 8.5pt;
+    padding: 3px 5px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+  }
+  .pi-tabela tbody tr:nth-child(even) td {
+    background: #f5f5f5 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Cores de status */
+  .pi-ok  { color: #1a6b1a; font-weight: 700 }
+  .pi-bad { color: #990000; font-weight: 700 }
+  .pi-muted { color: #555 }
+
+  /* Barra de frequencia simples */
+  .pi-freq { display: flex; align-items: center; gap: 4px }
+  .pi-barra {
+    height: 6px;
+    border-radius: 2px;
+    display: inline-block;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Faltas em lista compacta */
+  .pi-faltas-datas {
+    font-size: 7pt;
+    color: #666;
+    margin-top: 2px;
+    line-height: 1.4;
+  }
+}
+

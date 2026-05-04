@@ -1,0 +1,53 @@
+.corpo {
+  max-width: 1100px;
+  padding: 28px;
+}
+.top-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.top-info p {
+  color: #8b949e;
+  font-size: 11px;
+  flex: 1;
+}
+.dot {
+  font-size: 11px;
+  color: #484f58;
+}
+.valor {
+  font-size: 52px;
+  font-weight: 800;
+}
+.label {
+  color: #8b949e;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-top: 6px;
+}
+.admin-box {
+  margin-top: 28px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 20px;
+}
+.admin-box > p:first-child {
+  font-size: 11px;
+  color: #8b949e;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+.admin-box div {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.msg-admin {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #484f58;
+  letter-spacing: 0;
+}
