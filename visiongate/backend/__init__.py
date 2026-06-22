@@ -1,1 +1,0 @@
-"""Funcoes internas do VisionGate."""
